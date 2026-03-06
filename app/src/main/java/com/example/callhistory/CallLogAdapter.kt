@@ -60,11 +60,22 @@ class CallLogAdapter(private var items: List<CallLogEntry>) :
                 holder.ivIcon.setImageResource(R.drawable.ic_call_missed)
                 holder.ivIcon.setColorFilter(ContextCompat.getColor(context, R.color.rejected_color))
             }
-            CallType.UNKNOWN -> {
+                        CallType.UNKNOWN -> {
                 holder.tvCallType.text = "不明"
                 holder.tvCallType.setTextColor(ContextCompat.getColor(context, android.R.color.darker_gray))
                 holder.ivIcon.setImageResource(R.drawable.ic_call_incoming)
             }
+        }
+
+        // 電話番号クリックで検索
+        holder.itemView.setOnClickListener {
+            val number = item.number.replace(" ", "").replace("-", "")
+            val url = "https://www.google.com/search?q=${number}+電話番号"
+            val intent = android.content.Intent(
+                android.content.Intent.ACTION_VIEW,
+                android.net.Uri.parse(url)
+            )
+            holder.itemView.context.startActivity(intent)
         }
     }
 
