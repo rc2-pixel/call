@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="incoming_color">#2E7D32</color>
+    <color name="outgoing_color">#1565C0</color>
+    <color name="missed_color">#C62828</color>
+    <color name="rejected_color">#6A1B9A</color>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorAccent">#03A9F4</color>
+</resources>
